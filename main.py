@@ -47,10 +47,14 @@ class ControlCenter(object):
             '3': 'organization',
         }
         while 1:
+            print('0. Describe Columns (no search)')
             print('1. Users')
             print('2. Ticket')
             print('3. Organization')
             type_name = input('Input type to search as a number or type "exit" to close: ').strip()
+            if type_name == '0':
+                self._print_column_info()
+                continue
             if type_name == 'exit':
                 sys.exit(0)
             type_name = types.get(type_name)
@@ -81,6 +85,14 @@ class ControlCenter(object):
         except json.decoder.JSONDecodeError:
             print('Data files format is a incorrect JSON.')
         return False
+
+    def _print_column_info(self):
+        for type_name in ['user', 'organization', 'ticket']:
+            cols = self._get_field_column(type_name).keys()
+            print(f'Column for search {type_name.capitalize()} :')
+            print('------------------')
+            list(print(col) for col in cols)
+            print('------------------')
 
     def _prepare_data(self):
         if not self.ready:

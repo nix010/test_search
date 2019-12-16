@@ -12,6 +12,7 @@ For normal fields
 ```bash
 python3 main.py
 
+0. Describe Columns (no search)
 1. Users
 2. Ticket
 3. Organization
@@ -49,6 +50,7 @@ For bool fields
 ```bash
 python3 main.py
 
+0. Describe Columns (no search)
 1. Users
 2. Ticket
 3. Organization
@@ -67,6 +69,7 @@ For empty or invalid fields
 ```bash
 python3 main.py
 
+0. Describe Columns (no search)
 1. Users
 2. Ticket
 3. Organization
@@ -76,4 +79,73 @@ Input the value to search: xxx
 No results found for "user" with "name" value of "xxx"
 ==================
 Search again ?(y/n):
+```
+
+Describe
+
+```bash
+0. Describe Columns
+1. Users
+2. Ticket
+3. Organization
+Input type to search as a number or type "exit" to close: 0
+Column for search User :
+------------------
+_id
+url
+external_id
+name
+alias
+created_at
+active
+verified
+shared
+locale
+timezone
+last_login_at
+email
+phone
+signature
+organization_id
+tags
+suspended
+role
+------------------
+Column for search Organization :
+------------------
+_id
+url
+external_id
+name
+domain_names
+created_at
+details
+shared_tickets
+tags
+------------------
+Column for search Ticket :
+------------------
+_id
+url
+external_id
+created_at
+type
+subject
+description
+priority
+status
+submitter_id
+assignee_id
+organization_id
+tags
+has_incidents
+due_at
+via
+------------------
+0. Describe Columns
+1. Users
+2. Ticket
+3. Organization
+Input type to search as a number or type "exit" to close:
+
 ```
